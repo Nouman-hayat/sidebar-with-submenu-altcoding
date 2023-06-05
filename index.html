@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Side Menubar with sub menu </title>
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <nav class="sidebar-menu-wrapper">
+      <div class="heading">Alt Coding</div>
+      <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li>
+          <a href="#" class="product-btn">Product
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="product-show">
+            <li><a href="#">Add Product </a></li>
+            <li><a href="#">Delete Product</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="service-btn">Services
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="service-show">
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#"> SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="title">Sidebar Menu with sub-menu</div>
+     
+    </div>
+
+    <script>
+    $('.btn').click(function(){
+      $(this).toggleClass("click");
+      $('.sidebar-menu-wrapper').toggleClass("show");
+    });
+      $('.product-btn').click(function(){
+        $('nav ul .product-show').toggleClass("show");
+        $('nav ul .first').toggleClass("rotate");
+      });
+      $('.service-btn').click(function(){
+        $('nav ul .service-show').toggleClass("show1");
+        $('nav ul .second').toggleClass("rotate");
+      });
+      $('nav ul li').click(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    </script>
+
+  </body>
+</html>
